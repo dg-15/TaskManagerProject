@@ -1,8 +1,10 @@
 import axios from "axios";
 
-// Set to 5002 (or whichever port your task app's backend is using)
+// ✅ Dynamically use local or deployed backend URL
 const BASE_URL =
-  import.meta.env.MODE === "development" ? "http://localhost:5002/api" : "/api";
+  import.meta.env.MODE === "development"
+    ? "http://localhost:5002/api"
+    : import.meta.env.VITE_API_BASE_URL; // ✅ points to Render backend in production
 
 const api = axios.create({
   baseURL: BASE_URL,
