@@ -1,10 +1,11 @@
 import axios from "axios";
 
-// ✅ Dynamically use local or deployed backend URL
 const BASE_URL =
   import.meta.env.MODE === "development"
     ? "http://localhost:5002/api"
-    : import.meta.env.VITE_API_BASE_URL; // ✅ points to Render backend in production
+    : import.meta.env.VITE_API_BASE_URL;
+
+console.log("🔍 API Base URL:", BASE_URL); // TEMP debug line — check in browser console after deploy
 
 const api = axios.create({
   baseURL: BASE_URL,
