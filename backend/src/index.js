@@ -25,7 +25,11 @@ const PORT = process.env.PORT || 5002;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173", // Keep for local development
+      "https://task-manager-project-lake.vercel.app", // Your Vercel URL
+    ],
+    credentials: true,
   })
 );
 app.use(express.json()); // this middleware will parse JSON bodies: req.body
