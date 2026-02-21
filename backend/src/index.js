@@ -27,10 +27,10 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // Keep for local development
-      "https://task-manager-project-lake.vercel.app", // Your Vercel URL
+      "https://taskmanager-project-sigma.vercel.app", // Your Vercel URL
     ],
     credentials: true,
-  })
+  }),
 );
 app.use(express.json()); // this middleware will parse JSON bodies: req.body
 app.use(rateLimiter);
