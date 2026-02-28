@@ -27,11 +27,11 @@ export const registerUser = async (req, res) => {
       token: generateToken(user._id),
     });
   } catch (error) {
+    console.error("Register error:", error); // add this
     res.status(500).json({ message: "Server error" });
   }
 };
 
-// @desc Login user
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -47,6 +47,7 @@ export const loginUser = async (req, res) => {
       res.status(401).json({ message: "Invalid email or password" });
     }
   } catch (error) {
+    console.error("Login error:", error); // add this
     res.status(500).json({ message: "Server error" });
   }
 };
