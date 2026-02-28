@@ -27,8 +27,8 @@ const PORT = process.env.PORT || 5002;
 app.use(
   cors({
     origin: [
-      "http://localhost:5173", // Keep for local development
-      "https://taskmanager-project-sigma.vercel.app", // Your Vercel URL
+      "http://localhost:5173",
+      "https://task-manager-project-lake.vercel.app",
     ],
     credentials: true,
   }),
