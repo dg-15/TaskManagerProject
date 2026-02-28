@@ -12,6 +12,7 @@ dotenv.config();
 console.log("Loaded .env test:", process.env.EMAIL_USER);
 
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 5002;
 //const __dirname = path.resolve();
 
