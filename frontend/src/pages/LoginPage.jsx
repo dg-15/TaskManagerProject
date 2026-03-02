@@ -109,6 +109,12 @@ const LoginPage = () => {
             </Link>
           </p>
         </form>
+        {/* Test Credentials */}
+        <div className="mt-6 p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-center">
+          <p className="text-xs text-gray-400 mb-1">🧪 Test Credentials</p>
+          <p className="text-xs text-emerald-400">Email: test@gmail.com</p>
+          <p className="text-xs text-emerald-400">Password: test123</p>
+        </div>
       </div>
 
       {/* Optional Terms text below */}
