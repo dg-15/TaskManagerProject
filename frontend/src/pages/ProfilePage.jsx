@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import { LogOut, Save } from "lucide-react";
+import { ArrowLeft, LogOut, Save } from "lucide-react";
 import toast from "react-hot-toast";
 import api from "../lib/axios";
 import { useNavigate } from "react-router-dom";
@@ -75,7 +75,14 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0b0b0b] px-4 py-10 text-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-[#0b0b0b] px-4 py-10 text-gray-100 relative">
+      <button
+        onClick={() => navigate("/")}
+        className="absolute top-6 left-6 flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition"
+      >
+        <ArrowLeft className="w-5 h-5" />
+        <span>Back</span>
+      </button>
       <div className="w-full max-w-md bg-[#111] border border-emerald-500/20 rounded-2xl p-8 shadow-lg hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all">
         <h2 className="text-3xl font-semibold text-center text-emerald-400 mb-8">
           My Profile
@@ -123,7 +130,7 @@ const ProfilePage = () => {
               {loading ? "Saving..." : "Save Changes"}
             </button>
             <button
-              onClick={handleLogout} 
+              onClick={handleLogout}
               type="button"
               className="flex items-center gap-2 px-5 py-2 border border-emerald-500/30 text-emerald-400 hover:text-red-400 hover:border-red-400 font-semibold rounded-lg transition"
             >
